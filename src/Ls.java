@@ -14,7 +14,7 @@ public class Ls {
         System.out.println(Arrays.toString(new File(".").list()));
         System.out.println("HOME DIRECTORY");
         System.out.println(Arrays.toString(new File(System.getProperty("user.home")).list()));
-        System.out.println("DAY15");
-        System.out.println(Arrays.toString(new File("../pij15/src").list()));
+        System.out.println("DAY15 pathnames - listFiles()");
+        System.out.println(Arrays.toString(new File("../pij15/src").listFiles()));
     }
 }
