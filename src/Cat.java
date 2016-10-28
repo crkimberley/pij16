@@ -10,12 +10,14 @@ public class Cat {
 
     private void launch(String filename) {
         try (BufferedReader in = new BufferedReader(new FileReader(new File(filename)))) {
-
+            String line;
+            while ((line = in.readLine()) != null) {
+                System.out.println(line);
+            }
         } catch (FileNotFoundException ex) {
-
+            System.out.println("File " + filename + " does not exist");
         } catch (IOException ex) {
-
+            ex.printStackTrace();
         }
-
     }
 }
