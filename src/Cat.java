@@ -5,19 +5,21 @@ import java.io.*;
  */
 public class Cat {
     public static void main(String[] args) {
-        new Cat().launch(args[0]);
+        new Cat().launch(args);
     }
 
-    private void launch(String filename) {
-        try (BufferedReader in = new BufferedReader(new FileReader(new File(filename)))) {
-            String line;
-            while ((line = in.readLine()) != null) {
-                System.out.println(line);
+    private void launch(String[] filenames) {
+        for (String filename : filenames) {
+            try (BufferedReader in = new BufferedReader(new FileReader(new File(filename)))) {
+                String line;
+                while ((line = in.readLine()) != null) {
+                    System.out.println(line);
+                }
+            } catch (FileNotFoundException ex) {
+                System.out.println("File " + filename + " does not exist");
+            } catch (IOException ex) {
+                ex.printStackTrace();
             }
-        } catch (FileNotFoundException ex) {
-            System.out.println("File " + filename + " does not exist");
-        } catch (IOException ex) {
-            ex.printStackTrace();
         }
     }
 }
