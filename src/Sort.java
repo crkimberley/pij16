@@ -19,9 +19,7 @@ public class Sort {
                 lines.add(line);
             }
             Collections.sort(lines);
-            for (String sortedLine : lines) {
-                System.out.println(sortedLine);
-            }
+            lines.forEach(System.out::println);
         } catch (FileNotFoundException ex) {
             System.out.println("File " + filename + " does not exist");
         } catch (IOException ex) {
