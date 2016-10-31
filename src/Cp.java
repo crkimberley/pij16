@@ -1,27 +1,40 @@
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
  * Created by chris on 28/10/2016.
  */
-public class Cp {
+/*public class Cp {
     public static void main(String[] args) {
         new Cp().launch(args);
     }
 
     private void launch(String[] filenames) {
-        File sourceFile = new File(filenames[0]);
-        File destinationFile = new File(filenames[1]);
-        if (destinationFile.exists()) {
-            System.out.print("Overwrite " + destinationFile + " ? (y/n): ");
-            Scanner input = new Scanner(System.in);
-            if (!input.next().equals("y")) {
-                System.out.println("OK - " + destinationFile + " won't be overwritten");
-                return;
+        List<File> files = new ArrayList<>();
+        for (String filename : filenames) {
+            File file = new File(filename);
+            if (file.exists()) {
+                files.add(file);
+            } else {
+                System.out.println(filename + " doesn't exist");
             }
         }
-        try (BufferedReader in = new BufferedReader(new FileReader(sourceFile));
-             PrintWriter out = new PrintWriter(destinationFile)) {
+        File directory = new File(files.get(files.size() - 1);
+        if (!directory.isDirectory()) {
+            System.out.println(directory.getName() + " isn't a directory");
+            return;
+        }
+        System.out.print("Overwrite directory " + directory.getName() + " ? (y/n): ");
+        Scanner input = new Scanner(System.in);
+        if (!input.next().equals("y")) {
+            System.out.println(directory.getName() + " won't be overwritten");
+            return;
+        }
+        for ()
+        try (BufferedReader in = new BufferedReader(new FileReader(files[]));
+             PrintWriter out = new PrintWriter(files.get(files.size() - 1))) {
             String line;
             while ((line = in.readLine()) != null) {
                 out.println(line);
@@ -33,3 +46,4 @@ public class Cp {
         }
     }
 }
+*/
