@@ -13,8 +13,8 @@ public class Sort {
 
     private void launch(String filename) {
         try (BufferedReader in = new BufferedReader(new FileReader(new File(filename)))) {
-            String line;
             List<String> lines = new ArrayList<>();
+            String line;
             while ((line = in.readLine()) != null) {
                 lines.add(line);
             }

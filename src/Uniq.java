@@ -11,8 +11,8 @@ public class Uniq {
 
     private void launch(String filename) {
         try (BufferedReader in = new BufferedReader(new FileReader(new File(filename)))) {
-            String line;
             Set<String> lines = new LinkedHashSet<>();
+            String line;
             while ((line = in.readLine()) != null) {
                 lines.add(line);
             }
