@@ -19,6 +19,7 @@ public class Sort {
                 lines.add(line);
             }
             Collections.sort(lines);
+            // Java 8 forEach statement with method reference
             lines.forEach(System.out::println);
         } catch (FileNotFoundException ex) {
             System.out.println("File " + filename + " does not exist");
